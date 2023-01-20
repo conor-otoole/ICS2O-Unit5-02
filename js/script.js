@@ -4,20 +4,29 @@
 // Created on: Sep 2020
 // This file contains the JS functions for index.html
 
-"use strict"
-
 /**
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Unit5-02/sw.js", {
+    scope: "/ICS2O-Unit5-02/",
   })
 }
 
+const randomNumberPos = Math.floor(Math.random() * 6) + 1
+const randomNumberNeg = Math.floor(Math.random() * -6) + 1
+
 /**
- * This function displays an alert.
+ * This function displays positive and negative number
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  buttonOnChecked = document.getElementById("flash1").checked
+
+  if (buttonOnChecked == true) {
+    document.getElementById("radio-button-value").innerHTML =
+      "Your random number is: " + randomNumberPos + "."
+  } else {
+    document.getElementById("radio-button-value").innerHTML =
+      "Your random number is: " + randomNumberNeg + "."
+  }
 }
